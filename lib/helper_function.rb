@@ -43,8 +43,11 @@ def create_player(team_name)
     player = Player.create(name: new_name, position: new_position, rating: new_rating, team_id: new_id)
 end
 
+###########################################################################################
 
 def buy_a_team
+    puts "Welcome to the Metropolitan Division!"
+    puts "So you want to buy a team and you think you can run it too?"
     puts "Which team would you like to purchase?"
     puts '1. Carolina Hurricanes - $450,000,000'
     puts '2. Columbus Blue Jackets - $325,000,000'
@@ -63,7 +66,7 @@ def main_menu(input)
     case (input)
     when 1
         team_name = "Carolina Hurricanes"
-        puts 'Hurricanes GM Options'
+        puts 'Hurricanes GM Options'.black.on_red
     when 2
         team_name = "Columbus Blue Jackets"
         puts 'Blue Jackets GM Options'
@@ -103,7 +106,6 @@ def gm_action(choice, team_name)
         puts "Roster"
         find_players_for_team(team_name)
         gets.chomp
-        # return_to_main(team_name)
     when 2
         puts "Available Free Agents"
         puts "Please enter the FULL NAME of Plyer you wish to Add to your Roster"
